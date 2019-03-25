@@ -1,0 +1,2 @@
+$ python my_cisco-calculate-ssh-fingerprint.py my_crypto_key.hex
+SHA256: pksSqc5yH2lRFn1UGTd7d9PqKER1w62Udgwwrn5rhw8=
