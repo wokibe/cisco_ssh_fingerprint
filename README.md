@@ -12,13 +12,15 @@ https://blog.didierstevens.com/2012/01/01/calculating-a-ssh-fingerprint-from-a-c
 https://blog.didierstevens.com/2014/09/01/update-calculating-a-ssh-fingerprint-from-a-cisco-public-key/
 
 Anyway, meanwhile the ssh clients have changed to use the SHA256 fingerprint.
-The included Python2(!) script solves this challenge.
+The included Python3 script cisco_ssh_fingerprint.py solves this challenge.
 
 ### Usage
 from the Cisco output (my_crypto_key.txt) extract the 5 lines of the pubilc
 key hex dump und put them in a file (e.g.: my_crypto_key.hex).
 Then run the script with this file as input:
 
-$ python cisco-calculate-ssh-fingerprint.py my_crypto_key.hex
-
+```
+$ python3 cisco_ssh_fingerprint.py -f my_crypto_key.hex
+MD5:    04ecfff9f0dc60b6107fdcd67d5eea25
 SHA256: pksSqc5yH2lRFn1UGTd7d9PqKER1w62Udgwwrn5rhw8=
+```

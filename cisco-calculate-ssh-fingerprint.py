@@ -6,7 +6,8 @@ __version__ = '0.0.3'
 __date__ = '2019/03/25'
 
 """
-
+This is the original Python2 script, adapted for SHA256
+ 
 Source code put in public domain by Didier Stevens, no Copyright
 https://DidierStevens.com
 Use at your own risk

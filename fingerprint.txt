@@ -1,2 +1,3 @@
-$ python cisco-calculate-ssh-fingerprint.py my_crypto_key.hex
+$ python3 cisco_ssh_fingerprint.py -f my_crypto_key.hex
+MD5:    04ecfff9f0dc60b6107fdcd67d5eea25
 SHA256: pksSqc5yH2lRFn1UGTd7d9PqKER1w62Udgwwrn5rhw8=
