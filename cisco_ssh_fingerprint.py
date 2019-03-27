@@ -13,9 +13,10 @@ Use at your own risk
 
 History:
   2011/12/20: start
+  2011/12/30: added SplitPerXCharacters
   2014/08/19: fixed bug MatchLength
   2019/03/26: reengineered for python 3
-              calculate base64 encoded SHA256 
+              calculate base64 encoded SHA256
 Todo:
 """
 
@@ -52,7 +53,7 @@ def HexDumpFile2Data(filename):
     """convert the Cisco dump bytes to a list of integers"""
     global finger
     debug = finger['debug']
-    
+
     if debug:
         print('Filename: {}'.format(filename))
 
@@ -64,7 +65,7 @@ def HexDumpFile2Data(filename):
     else:
         # as no filename defined, we allow input via STDIN
         if platform.system() == 'Windows':
-            eof = 'CTRL-Z'
+            eof = 'CTRL-Z and Return'
         else:
             eof = 'CTRL-D'
         print('Paste the Cisco key dump and terminate with {}'.format(eof))
@@ -218,6 +219,8 @@ def CalcFingerprint(modulus, exponent):
     sha256 = hashlib.sha256(data).digest()
     return md5, sha256
 
+def SplitPerXCharacters(string, count):
+    return [string[iter:iter+count] for iter in range(0, len(string), count)]
 
 def CiscoCalculateSSHFingerprint(filename):
     global finger
@@ -243,7 +246,9 @@ def CiscoCalculateSSHFingerprint(filename):
 
 #    fingerprint = CalcFingerprint(result[0], result[1])
     md5, sha256 = CalcFingerprint(result[0], result[1])
-    print('MD5:    {}'.format(md5))
+    splited_md5 = ':'.join(SplitPerXCharacters(md5, 2))
+
+    print('MD5:    {}'.format(splited_md5))
     print('SHA256: {}'.format(base64.b64encode(sha256).decode()))
 
 def Main():
