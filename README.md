@@ -19,8 +19,8 @@ https://github.com/DidierStevens/DidierStevensSuite/blob/master/cisco-calculate-
 does not generates the SHA256 fingerprint, in spite of the indication in the above
 web pages.
 
-The included script cisco_ssh_fingerprint.py is a reengineered python3 script,
-which also generates the SHA256 fingerprint.
+The included file cisco_ssh_fingerprint.py is the above mentioned script reengineered 
+for python3, which also generates the SHA256 fingerprint.
 
 ### Usage
 from the Cisco output (my_crypto_key.txt) extract the 5 lines of the pubilc
