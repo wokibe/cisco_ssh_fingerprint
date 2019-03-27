@@ -1,4 +1,4 @@
-## Calculate the SHA256 fingerprint from a Cisco crypto public rsa key
+## Calculate the MD5 and SHA256 fingerprints from a Cisco crypto public rsa key
 
 When accessing a Cisco router with a ssh or putty session, at the first
 attempt you will be asked to verify the displayed fingerprint of the rsa key.
@@ -34,4 +34,4 @@ SHA256: pksSqc5yH2lRFn1UGTd7d9PqKER1w62Udgwwrn5rhw8=
 ```
 
 An additional goodie: if the -f option is not used, the required hex dump can
-be entered with a cut&paste operation. 
+be entered with a cut&paste operation.
